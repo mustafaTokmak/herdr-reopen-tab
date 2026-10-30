@@ -1,0 +1,21 @@
+[
+  {
+    "name": "herdr_closed_tabs_list",
+    "description": "List the tabs closed in the Herdr desktop app that can come back, newest first: their names, spaces, machines, when they closed, and each pane's folder and the command it reruns. `next` is what Cmd+Shift+T brings back. Herdr's window must be open.",
+    "inputSchema": {"type":"object","properties":{},"additionalProperties":false},
+    "annotations": {"readOnlyHint":true,"openWorldHint":false},
+    "http": {"method":"GET","path":"/v1/closed-tabs"},
+    "cli": "list",
+    "uiActions": ["see what Cmd+Shift+T brings back", "No closed tab to reopen"]
+  },
+  {
+    "name": "herdr_closed_tab_reopen",
+    "description": "Reopen a closed Herdr tab, like Cmd+Shift+T: the newest close, or the one whose `tab` id herdr_closed_tabs_list gave. It comes back in its place in its space (or with its whole space, if that closed too), panes in their folders, agents resuming their last conversation, and gets focus. Returns what came back and the new ids.",
+    "inputSchema": {"type":"object","properties":{"tab":{"type":"string","minLength":1,"description":"A closed tab's id from herdr_closed_tabs_list, including any machine prefix. Leave out for the newest close."}},"additionalProperties":false},
+    "annotations": {"readOnlyHint":false,"destructiveHint":false,"idempotentHint":false,"openWorldHint":false},
+    "http": {"method":"POST","path":"/v1/reopen"},
+    "cli": "reopen",
+    "command": "mod.open:reopen-tab",
+    "uiActions": ["Cmd+Shift+T"]
+  }
+]

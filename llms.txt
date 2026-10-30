@@ -1,0 +1,13 @@
+# Reopen closed tab (Herdr mod)
+
+Cmd+Shift+T for the Herdr desktop app: brings back the tab closed last, in its
+place in its space, with its panes in their folders and agents (Claude Code,
+Codex) resuming their last conversation there. Press again for the one before.
+A closed space comes back whole; tabs on other machines come back there.
+
+| Action | JSON API | MCP tool | CLI |
+|---|---|---|---|
+| see what Cmd+Shift+T brings back, No closed tab to reopen | GET /v1/closed-tabs | herdr_closed_tabs_list | `herdr-reopen-tab list` |
+| Cmd+Shift+T | POST /v1/reopen | herdr_closed_tab_reopen | `herdr-reopen-tab reopen` |
+
+See [full API reference](llms-full.txt), [agent workflow](mods/reopen-tab/SKILL.md) and [install recipe](RECIPE.md).

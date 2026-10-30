@@ -1,0 +1,11 @@
+{
+  "name": "herdr-reopen-tab",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "docs": "node scripts/agent-docs.mjs"
+  }
+}

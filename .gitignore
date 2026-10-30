@@ -1,0 +1,5 @@
+# Written by `herdr-app check` for editors
+gpui-kit.d.ts
+herdr.d.ts
+jsconfig.json
+node_modules/

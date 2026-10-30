@@ -1,0 +1,5 @@
+{
+  "global": {
+    "cmd-shift-t": "mod.open:reopen-tab"
+  }
+}
